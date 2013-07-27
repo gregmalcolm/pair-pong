@@ -1,0 +1,5 @@
+== Pair Pong
+
+Turn based remote pairing.
+
+Great for hooking up with new pairs, working on code katas and suchlike.
