@@ -1,0 +1,18 @@
+Minimum functionality
+
+* Instigator creates project
+     * Picks repo
+     * Picks kata url
+     * Picks a language
+
+* Instigator picks a feature
+
+* Insitgator writes a failing test, commits it
+
+* Instigator invites invitee to pair on project
+
+* Invitee declines? Instigator informed that they need to invite someone else.
+
+* Invitee accepts? Start session
+
+* Invitee's turn
