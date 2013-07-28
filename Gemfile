@@ -5,6 +5,7 @@ gem 'rails', '4.0.0'
 
 gem 'pg'
 gem 'sass-rails', '~> 4.0.0'
+gem 'haml-rails'
 gem 'uglifier', '>= 1.3.0'
 gem 'coffee-rails', '~> 4.0.0'
 gem 'therubyracer', platforms: :ruby
@@ -20,6 +21,7 @@ end
 
 group :text, :development do
   gem 'debugger'
+  gem 'pry-plus'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'rspec-given'
