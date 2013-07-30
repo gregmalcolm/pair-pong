@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @exercise.name
+%p
+  %b Kata link:
+  = @exercise.kata_link
+%p
+  %b Language:
+  = @exercise.language
+%p
+  %b Instigator:
+  = @exercise.instigator_id
+%p
+  %b Turn:
+  = @exercise.turn_id
+%p
+  %b Completed at:
+  = @exercise.completed_at
+
+= link_to 'Edit', edit_exercise_path(@exercise)
+\|
+= link_to 'Back', exercises_path
