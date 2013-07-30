@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20130730015910) do
     t.string   "name"
     t.string   "kata_link"
     t.string   "language"
+    t.string   "repo"
     t.integer  "instigator_id"
     t.integer  "turn_id"
     t.datetime "completed_at"
