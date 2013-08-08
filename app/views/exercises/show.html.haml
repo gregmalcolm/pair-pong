@@ -4,21 +4,13 @@
   %b Name:
   = @exercise.name
 %p
-  %b Kata link:
-  = @exercise.kata_link
+  %b Kata:
+  = link_to @exercise.kata_link, @exercise.kata_link
+%p
+  %b Git Repo:
+  = link_to @exercise.repo, @exercise.repo
 %p
   %b Language:
   = @exercise.language
-%p
-  %b Instigator:
-  = @exercise.instigator_id
-%p
-  %b Turn:
-  = @exercise.turn_id
-%p
-  %b Completed at:
-  = @exercise.completed_at
 
-= link_to 'Edit', edit_exercise_path(@exercise)
-\|
-= link_to 'Back', exercises_path
+= link_to 'Home', home_path
