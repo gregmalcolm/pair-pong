@@ -6,7 +6,6 @@ class CreateExercises < ActiveRecord::Migration
       t.string :language
       t.string :repo
       t.integer :instigator_id
-      t.integer :turn_id
       t.datetime :completed_at
 
       t.timestamps

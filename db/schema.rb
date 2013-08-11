@@ -17,36 +17,35 @@ ActiveRecord::Schema.define(version: 20130808163120) do
   enable_extension "plpgsql"
   enable_extension "hstore"
 
-  create_table "exercise_team_members", force: true do |t|
-    t.integer "exercise_id"
-    t.integer "user_id"
-  end
-
   create_table "exercises", force: true do |t|
     t.string   "name"
     t.string   "kata_link"
     t.string   "language"
     t.string   "repo"
     t.integer  "instigator_id"
-    t.integer  "turn_id"
     t.datetime "completed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "turn_names", force: true do |t|
+  create_table "team_memberships", force: true do |t|
+    t.integer "exercise_id"
+    t.integer "user_id"
+  end
+
+  create_table "turn_types", force: true do |t|
     t.string   "name"
     t.string   "description", limit: 4000
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "turn_names", ["name"], name: "index_turn_names_on_name", using: :btree
+  add_index "turn_types", ["name"], name: "index_turn_types_on_name", using: :btree
 
   create_table "turns", force: true do |t|
     t.integer  "exercise_id"
-    t.integer  "turn_name_id"
-    t.string   "comment",      limit: 1000
+    t.integer  "turn_type_id"
+    t.text     "comment"
     t.string   "ending_sha",   limit: 40
     t.datetime "completed_at"
     t.datetime "created_at"
@@ -55,7 +54,7 @@ ActiveRecord::Schema.define(version: 20130808163120) do
 
   add_index "turns", ["completed_at"], name: "index_turns_on_completed_at", using: :btree
   add_index "turns", ["exercise_id"], name: "index_turns_on_exercise_id", using: :btree
-  add_index "turns", ["turn_name_id"], name: "index_turns_on_turn_name_id", using: :btree
+  add_index "turns", ["turn_type_id"], name: "index_turns_on_turn_type_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider"

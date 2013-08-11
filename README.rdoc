@@ -3,3 +3,12 @@
 Turn based remote pairing.
 
 Great for hooking up with new pairs, working on code katas and suchlike.
+
+-- Setup
+
+```
+bundle
+rake db:create
+rake db:migrate
+rake db:seed
+```
