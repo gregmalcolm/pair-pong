@@ -31,6 +31,7 @@ end
 
 gem 'thin'
 gem 'ember-rails'
+gem 'emblem-rails'
 gem 'ember-source', '1.2.0'
 gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
 
