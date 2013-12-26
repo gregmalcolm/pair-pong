@@ -1,2 +1,8 @@
 =route.name
-h1 Who's up for some Pair Pong?
+h1 Who's up for Pair Pong?
+div style="text-align: center;"
+  button{action "create"} class="btn btn-success btn-lg"
+    span class="glyphicon glyphicon-new-window"
+    '
+    | Start New Exercise
+

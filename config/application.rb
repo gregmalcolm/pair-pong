@@ -29,6 +29,7 @@ module PairPong
     config.ember.app_name = "EmberApp"
     config.ember.ember_path = "app/assets/javascripts/ember"
     config.handlebars.templates_root = "ember/templates"
+    config.assets.paths << "#{Rails}/vendor/assets/fonts"
 
     if Rails.env.development?
       raise "You haven't setup the github key" unless ENV['GITHUB_KEY'] && ENV['GITHUB_SECRET']
