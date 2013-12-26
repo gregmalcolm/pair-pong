@@ -1,0 +1,2 @@
+partial "header_bar"
+outlet

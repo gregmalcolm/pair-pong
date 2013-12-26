@@ -1,0 +1,13 @@
+nav id="header-nav" class="navbar navbar-inverse navbar-fixed-top"
+  a class="navbar-brand" href="#" Pair Pong
+  ul class="nav navbar-nav navbar-right"
+    if currentUserName
+      li
+        ' Signed in as
+        =currentUserName
+      li
+        a href="/signout" Sign Out
+    else
+      li
+        a href="/auth/github" Sign in with Github
+

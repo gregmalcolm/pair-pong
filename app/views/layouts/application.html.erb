@@ -1,21 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PairPong</title>
+  <title>Pair Pong</title>
   <%= stylesheet_link_tag    "application", media: "all" %>
   <%= javascript_include_tag "application"  %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <div id="user_nav">
-    <% if current_user %>
-      Signed in as <%= current_user.name %>
-      <%= link_to "Sign out", signout_path %>
-    <% else %>
-      <%= link_to "Sign in with Github", "/auth/github" %>
-    <% end %>
-  </div>
-<%= yield %>
-
+  <input type="hidden" id="current-user-name" value=<%= current_user.try(:name) %>>
+  <%= yield %>
 </body>
 </html>

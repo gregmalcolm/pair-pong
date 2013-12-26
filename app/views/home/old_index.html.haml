@@ -1,0 +1,9 @@
+%h1 Who's up for Pair Pong?
+
+=link_to 'New exercise', new_exercise_path
+
+%ul
+  - @exercises.each do |exercise|
+    %li
+      = link_to exercise.name, exercise
+
