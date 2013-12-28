@@ -15,4 +15,5 @@
 //= require bootstrap
 //= require_self
 
-//= require_tree .
+//= require_tree ./ember
+//= require_tree ./global

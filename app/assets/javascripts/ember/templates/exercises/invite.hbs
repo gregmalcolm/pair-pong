@@ -1,0 +1,26 @@
+<h1>New Pairing Exercise</h1>
+
+<form role="exercise">
+  <div class="form-group">
+    <label for="exercise-name">Name</label>
+    <input type="text" class="form-control" id="exercise-name" placeholder="Fizz Buzz">
+  </div>
+  <div class="form-group">
+    <label for="kata-details">Kata Details</label>
+    <textarea class="form-control" id="kata-details" rows="6">Write a program that prints the numbers from 1 to 100. But for multiples of three print “Fizz” instead of the number and for the multiples of five print “Buzz”. For numbers which are multiples of both three and five print “FizzBuzz”
+
+Details:
+   http://c2.com/cgi/wiki?FizzBuzzTest</textarea>
+  </div>
+  <div class="form-group">
+    <label for="invitation-text">Invitation Message</label>
+    <textarea class="form-control" id="invitation-text" rows="6">Interested in pairing with me on a Kata using Pair Pong? Pair Pong is a service that will allow us to work through the exercise in turns corresponding with the TDD Red Green Refactor concept</textarea>
+  </div>
+
+  <div style="text-align: center;">
+    <submit {{action "saveAndContinue"}} class="btn btn-primary btn-lg">
+      <span class="glyphicon glyphicon-envelope"></span>
+      Initiate Pairing
+    </submit>
+  </div>
+</form>
