@@ -1,4 +1,4 @@
 jQuery ->
-  $("textarea").on "focus keyup", (e) ->
+  $("textarea").on "change focus keyup", (e) ->
     if e.keyCode is 9
       $(@).select()
