@@ -1,0 +1,15 @@
+h1 Pair up!
+
+form role="pairing"
+  .form-group
+    label for="invite" Invitation Message
+    =textarea value=inviteMessage class="form-control" id="invite" rows="14" autofocus="autofocus" placeholder="Write out your invitation message here"
+  .form-group
+    label for="recipient" Recipient email
+    =input value=recipient class="form-control" id="recipient" type="email" placeholder="batman@wayneindustries.com"
+  div style="text-align: center;"
+    button{action "sendInvite"} type="submit" class="btn btn-success btn-lg"
+      span class="glyphicon glyphicon-envelope"
+      '
+      | Send Invitation
+

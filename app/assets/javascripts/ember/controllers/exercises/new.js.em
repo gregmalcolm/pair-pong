@@ -14,7 +14,7 @@ Details:
       content.save().then(@didSave.bind(@), @didReject.bind(@))
 
   didSave: (exercise) ->
-    @transitionToRoute("pairings.new")
+    @transitionToRoute("exercises.show.new_pairing", exercise.id)
 
   didReject: (reason) ->
     console.error "Save failed because #{reason}"

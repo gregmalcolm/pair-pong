@@ -1,14 +1,14 @@
-h1 New Pairing Exercise
+h1 New Pair Programming Exercise
 
 form role="exercise"
   .form-group
     label for="name" Name
-    =input value=name class="form-control" autofocus="autofocus" placeholder="Fizz Buzz"
+    =input value=name class="form-control" id="name" autofocus="autofocus" placeholder="Fizz Buzz"
   .form-group
     label for="kata-details" Kata Details
     =textarea value=kataDetails class="form-control" rows="14" placeholder="Explain the kata rules and/or give a link to website with more details"
   div style="text-align: center;"
     button{action "saveAndContinue"} type="submit" class="btn btn-primary btn-lg"
-      span class="glyphicon glyphicon-envelope"
+      span class="glyphicon glyphicon-bullhorn"
       '
       | Initiate Pairing
