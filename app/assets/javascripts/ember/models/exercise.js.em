@@ -2,6 +2,7 @@ class EmberApp.Exercise extends DS.Model
   #github_user_id: DS.attr('number')
   name: DS.attr('string')
   kata_details: DS.attr('string')
+  invitations: DS.hasMany('invitation')
 
 EmberApp.Exercise.FIXTURES = [
   {

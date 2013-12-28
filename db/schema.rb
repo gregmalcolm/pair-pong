@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130808163120) do
+ActiveRecord::Schema.define(version: 20131228055813) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -20,41 +20,23 @@ ActiveRecord::Schema.define(version: 20130808163120) do
   create_table "exercises", force: true do |t|
     t.string   "name"
     t.string   "kata_link"
-    t.string   "language"
-    t.string   "repo"
-    t.integer  "instigator_id"
-    t.datetime "completed_at"
+    t.integer  "github_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "team_memberships", force: true do |t|
-    t.integer "exercise_id"
-    t.integer "user_id"
-  end
+  add_index "exercises", ["github_id"], name: "index_exercises_on_github_id", using: :btree
 
-  create_table "turn_types", force: true do |t|
-    t.string   "name"
-    t.string   "description", limit: 4000
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "turn_types", ["name"], name: "index_turn_types_on_name", using: :btree
-
-  create_table "turns", force: true do |t|
+  create_table "invitations", force: true do |t|
+    t.string   "github_repository"
+    t.string   "invite_message"
+    t.string   "recipient"
     t.integer  "exercise_id"
-    t.integer  "turn_type_id"
-    t.text     "comment"
-    t.string   "ending_sha",   limit: 40
-    t.datetime "completed_at"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  add_index "turns", ["completed_at"], name: "index_turns_on_completed_at", using: :btree
-  add_index "turns", ["exercise_id"], name: "index_turns_on_exercise_id", using: :btree
-  add_index "turns", ["turn_type_id"], name: "index_turns_on_turn_type_id", using: :btree
+  add_index "invitations", ["exercise_id"], name: "index_invitations_on_exercise_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider"

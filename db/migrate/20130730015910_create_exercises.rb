@@ -3,12 +3,11 @@ class CreateExercises < ActiveRecord::Migration
     create_table :exercises do |t|
       t.string :name
       t.string :kata_link
-      t.string :language
-      t.string :repo
-      t.integer :instigator_id
-      t.datetime :completed_at
+      t.integer :github_id
 
       t.timestamps
     end
+
+    add_index :exercises, :github_id
   end
 end
