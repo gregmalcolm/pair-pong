@@ -1,44 +1,36 @@
 class ExercisesController < ApplicationController
+  respond_to :json
   before_action :set_exercise, only: [:show, :edit, :update, :destroy]
 
-  ## GET /exercises
-  ## GET /exercises.json
   #def index
     #@exercises = Exercise.all
   #end
 
-  ## GET /exercises/1
-  ## GET /exercises/1.json
-  #def show
-  #end
+  def show
+    respond_with @exercise
+  end
 
-  ## GET /exercises/new
   #def new
     #@exercise = Exercise.new
   #end
 
-  ## GET /exercises/1/edit
   #def edit
   #end
 
-  ## POST /exercises
-  ## POST /exercises.json
-  #def create
-    #@exercise = Exercise.new(exercise_params)
+  def create
+    @exercise = Exercise.new(exercise_params) do |ex|
+      ex.github_id = current_user.uid
+    end
 
-    #respond_to do |format|
-      #if @exercise.save
-        #format.html { redirect_to @exercise, notice: 'Exercise was successfully created.' }
-        #format.json { render action: 'show', status: :created, location: @exercise }
-      #else
-        #format.html { render action: 'new' }
-        #format.json { render json: @exercise.errors, status: :unprocessable_entity }
-      #end
-    #end
-  #end
+    respond_to do |format|
+      if @exercise.save
+        format.json { render json: @exercise, status: :created }
+      else
+        format.json { render json: @exercise.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
-  ## PATCH/PUT /exercises/1
-  ## PATCH/PUT /exercises/1.json
   #def update
     #respond_to do |format|
       #if @exercise.update(exercise_params)
@@ -51,8 +43,6 @@ class ExercisesController < ApplicationController
     #end
   #end
 
-  ## DELETE /exercises/1
-  ## DELETE /exercises/1.json
   #def destroy
     #@exercise.destroy
     #respond_to do |format|
@@ -69,6 +59,6 @@ class ExercisesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def exercise_params
-      params.require(:exercise).permit(:name, :kata_link)
+      params.require(:exercise).permit(:name, :kata_details)
     end
 end

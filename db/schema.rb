@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20131228055813) do
 
   create_table "exercises", force: true do |t|
     t.string   "name"
-    t.string   "kata_link"
+    t.text     "kata_details"
     t.integer  "github_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 20131228055813) do
 
   create_table "invitations", force: true do |t|
     t.string   "github_repository"
-    t.string   "invite_message"
+    t.text     "invite_message"
     t.string   "recipient"
     t.integer  "exercise_id"
     t.datetime "created_at"

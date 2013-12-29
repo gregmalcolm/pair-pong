@@ -4,6 +4,8 @@ class EmberApp.Exercise extends DS.Model
   kata_details: DS.attr('string')
   invitations: DS.hasMany('invitation')
 
+#EmberApp.ExerciseAdapter = DS.FixtureAdapter
+
 EmberApp.Exercise.FIXTURES = [
   {
     id: 1000
@@ -18,3 +20,4 @@ Details:
     kata_details: "http://codingdojo.org/cgi-bin/wiki.pl?KataRomanNumerals"
   }
 ]
+

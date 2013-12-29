@@ -1,3 +1,4 @@
 class Exercise < ActiveRecord::Base
-  validate :name, presence: true
+  validates :github_id, presence: true
+  validates :name, presence: true
 end

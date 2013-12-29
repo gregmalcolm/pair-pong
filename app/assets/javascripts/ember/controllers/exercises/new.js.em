@@ -17,4 +17,5 @@ Details:
     @transitionToRoute("exercises.show.new_pairing", exercise.id)
 
   didReject: (reason) ->
-    console.error "Save failed because #{reason}"
+    console.log "Save failed"
+    console.error reason

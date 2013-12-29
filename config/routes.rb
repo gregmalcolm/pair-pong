@@ -1,5 +1,6 @@
 PairPong::Application.routes.draw do
-  resources :exercises
+  resources :exercises, defaults: { format: 'json' }
+  resources :invitations, defaults: { format: 'json' }
   resources :users
 
   get "/auth/:provider/callback" => "sessions#create"

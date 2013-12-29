@@ -2,7 +2,7 @@ class CreateExercises < ActiveRecord::Migration
   def change
     create_table :exercises do |t|
       t.string :name
-      t.string :kata_link
+      t.text :kata_details, limit: nil
       t.integer :github_id
 
       t.timestamps

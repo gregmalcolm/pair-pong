@@ -18,4 +18,5 @@ class EmberApp.ExercisesShowNewPairingController extends Ember.ObjectController
     console.log "Done"
 
   didReject: (reason) ->
-    console.error "Save failed because #{reason}"
+    console.log "Save failed"
+    console.error reason
