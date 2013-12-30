@@ -8,5 +8,3 @@
 window.EmberApp = Ember.Application.create
   rootElement: '#ember-app'
 
-class EmberApp.ApplicationSerializer extends DS.ActiveModelSerializer
-

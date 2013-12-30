@@ -36,3 +36,4 @@ gem 'ember-source', '1.2.0'
 gem 'ember_script-rails', :github => 'ghempton/ember-script-rails'
 
 gem 'omniauth-github', :git => 'git://github.com/intridea/omniauth-github.git'
+gem 'attr_encrypted'

@@ -30,13 +30,16 @@ ActiveRecord::Schema.define(version: 20131228055813) do
   create_table "invitations", force: true do |t|
     t.string   "github_repository"
     t.text     "invite_message"
+    t.integer  "user_id"
     t.string   "recipient"
     t.integer  "exercise_id"
+    t.string   "confirm_code"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
   add_index "invitations", ["exercise_id"], name: "index_invitations_on_exercise_id", using: :btree
+  add_index "invitations", ["user_id"], name: "index_invitations_on_user_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "provider"

@@ -7,7 +7,9 @@ class InvitationsController < ApplicationController
   end
 
   def create
-    @invitation = Invitation.new(invitation_params)
+    @invitation = Invitation.new(invitation_params) do |invite|
+      invite.user = current_user
+    end
     respond_to do |format|
       if @invitation.save
         format.json { render json: @invitation, status: :created }
